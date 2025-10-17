@@ -1,0 +1,12 @@
+@import "tailwindcss";
+body{
+  @apply bg-black text-[#d9d9d9]
+}
+
+.container{
+  @apply mx-auto max-w-[1200px];
+}
+
+.btn-primary{
+  @apply bg-blue-700 cursor-pointer ease-in-out hover:bg-red-400 hover:scale-102 transition-all duration-400 px-[35px] py-[8px] pb-[11px] rounded-[100px] text-[16px]
+}
