@@ -6,6 +6,9 @@ import Leads from '../pages/admin/Leads';
 import Customization from '../pages/admin/Customization';
 import Policy from '../pages/admin/Policy';
 import Settings from '../pages/admin/Settings';
+import Login from '../auth/Login';
+
+import ProtectedRoute from '../route/ProtectedRoute';
 
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
@@ -53,6 +56,11 @@ export default function Routing(){
         <>
             <Router>
                 <Routes>
+                    <Route path='/' element={<Login/>}></Route>
+                    <Route path='/login' element={<Login/>}></Route>
+
+                    
+                    <Route path='/' element={<ProtectedRoute/>}>
                     {
                     adminroute.map((route,index)=>(
                         <Route key={index} path={route.path} element={route.element}>
@@ -64,6 +72,7 @@ export default function Routing(){
                         </Route>
                     ))
                 }
+                </Route>
                 </Routes>
             </Router>
         </>
